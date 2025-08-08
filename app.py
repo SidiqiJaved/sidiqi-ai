@@ -1,22 +1,12 @@
 import streamlit as st
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
-st.title("My Data Journey 🚀")
-st.write("Exploring data with Python and sharing the process.")
+st.set_page_config(page_title="Sidiqi AI", layout="wide")
 
-uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
-if uploaded_file:
-    df = pd.read_csv(uploaded_file)
-    st.write("Preview of your data:")
-    st.dataframe(df.head())
+st.sidebar.title("🚀 Sidiqi AI Projects")
+st.sidebar.markdown("Select a project from the sidebar")
 
-    st.write("Basic Stats:")
-    st.write(df.describe())
-
-    st.write("Column Distribution:")
-    column = st.selectbox("Choose a column", df.columns)
-    fig, ax = plt.subplots()
-    sns.histplot(df[column], kde=True, ax=ax)
-    st.pyplot(fig)
+st.title("Welcome to Sidiqi AI")
+st.markdown("""
+This is your launchpad for interactive AI tools.  
+Choose a project from the sidebar to get started!
+""")
