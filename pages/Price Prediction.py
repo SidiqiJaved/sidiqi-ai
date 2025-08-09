@@ -11,7 +11,7 @@ if uploaded_file:
     st.write(df.head())
 
     model = LinearRegression()
-    model.fit(df[['feature']], df['price'])
+    model.fit(df[['OPEN', 'HIGH', 'LOW', 'VOLUME']], df['CLOSE'])
 
     input_val = st.number_input("Enter feature value")
     prediction = model.predict([[input_val]])
